@@ -15,35 +15,93 @@
             <button id="themeToggle">🌙</button>
         </header>
 
+        <!-- Unit Selection -->
+        <div class="unit-selector">
+            <label>
+                <input type="radio" name="unitMode" value="px" checked />
+                px
+            </label>
+            <label>
+                <input type="radio" name="unitMode" value="em" />
+                em
+            </label>
+        </div>
+
         <!-- Desktop Tabs -->
         <nav class="tabs">
-            <button class="tab active" data-tab="percentToPx">% → px</button>
-            <button class="tab" data-tab="pxToPercent">px → %</button>
+            <button class="tab active" data-tab="pxToPercent" data-unit="px">px → %</button>
+            <button class="tab" data-tab="percentToPx" data-unit="px">% → px</button>
+            <button class="tab active" data-tab="emToPercent" data-unit="em">em → %</button>
+            <button class="tab" data-tab="percentToEm" data-unit="em">% → em</button>
         </nav>
 
         <!-- Mobile Dropdown -->
-        <select class="tab-dropdown">
+        <select class="tab-dropdown" id="tabDropdown">
+            <option value="pxToPercent" selected>px → %</option>
             <option value="percentToPx">% → px</option>
-            <option value="pxToPercent">px → %</option>
+            <option value="emToPercent">em → %</option>
+            <option value="percentToEm">% → em</option>
         </select>
 
         <div class="tab-content">
             <!-- Percentage to px -->
-            <div class="panel active" id="percentToPx">
+            <div class="panel" id="percentToPx">
                 <label>Percentage (%)</label>
-                <input type="number" id="percentToPxInput" />
+                <div class="input-wrapper">
+                    <input type="number" id="percentToPxInput" />
+                    <button class="clear-btn" data-target="percentToPxInput" title="Clear">✕</button>
+                </div>
                 <label>Base font size</label>
-                <input type="number" id="percentToPxBase" value="16" />
+                <div class="input-wrapper">
+                    <input type="number" id="percentToPxBase" value="16" />
+                    <button class="clear-btn" data-target="percentToPxBase" title="Clear">✕</button>
+                </div>
                 <p class="result" id="percentToPxResult"></p>
             </div>
 
             <!-- px to percentage -->
-            <div class="panel" id="pxToPercent">
+            <div class="panel active" id="pxToPercent">
                 <label>Pixel (px)</label>
-                <input type="number" id="pxToPercentInput" />
+                <div class="input-wrapper">
+                    <input type="number" id="pxToPercentInput" />
+                    <button class="clear-btn" data-target="pxToPercentInput" title="Clear">✕</button>
+                </div>
                 <label>Base font size</label>
-                <input type="number" id="pxToPercentBase" value="16" />
+                <div class="input-wrapper">
+                    <input type="number" id="pxToPercentBase" value="16" />
+                    <button class="clear-btn" data-target="pxToPercentBase" title="Clear">✕</button>
+                </div>
                 <p class="result" id="pxToPercentResult"></p>
+            </div>
+
+            <!-- Percentage to em -->
+            <div class="panel" id="percentToEm">
+                <label>Percentage (%)</label>
+                <div class="input-wrapper">
+                    <input type="number" id="percentToEmInput" />
+                    <button class="clear-btn" data-target="percentToEmInput" title="Clear">✕</button>
+                </div>
+                <label>Base font size</label>
+                <div class="input-wrapper">
+                    <input type="number" id="percentToEmBase" value="16" />
+                    <button class="clear-btn" data-target="percentToEmBase" title="Clear">✕</button>
+                </div>
+                <p class="result" id="percentToEmResult"></p>
+            </div>
+
+            <!-- em to percentage -->
+            <div class="panel" id="emToPercent">
+                <label>Em (em)</label>
+                <div class="input-wrapper">
+                    <input type="number" id="emToPercentInput" />
+                    <button class="clear-btn" data-target="emToPercentInput" title="Clear">✕</button>
+                </div>
+                <label>Base font size</label>
+                <div class="input-wrapper">
+                    <input type="number" id="emToPercentBase" value="16" />
+                    <button class="clear-btn" data-target="emToPercentBase" title="Clear">✕</button>
+                </div>
+                <p class="result" id="emToPercentResult"></p>
             </div>
         </div>
     </div>
