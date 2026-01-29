@@ -1,112 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unit Converter</title>
-    <link rel="stylesheet" href="static/styles.css" />
-</head>
-
-<body>
-    <div class="app">
-        <header class="app-header">
-            <h1>CSS Unit Converter</h1>
-            <button id="themeToggle">🌙</button>
-        </header>
-
-        <!-- Unit Selection -->
-        <div class="unit-selector">
-            <label>
-                <input type="radio" name="unitMode" value="px" checked />
-                px
-            </label>
-            <label>
-                <input type="radio" name="unitMode" value="em" />
-                em
-            </label>
-        </div>
-
-        <!-- Desktop Tabs -->
-        <nav class="tabs">
-            <button class="tab active" data-tab="pxToPercent" data-unit="px">px → %</button>
-            <button class="tab" data-tab="percentToPx" data-unit="px">% → px</button>
-            <button class="tab active" data-tab="emToPercent" data-unit="em">em → %</button>
-            <button class="tab" data-tab="percentToEm" data-unit="em">% → em</button>
-        </nav>
-
-        <!-- Mobile Dropdown -->
-        <select class="tab-dropdown" id="tabDropdown">
-            <option value="pxToPercent" selected>px → %</option>
-            <option value="percentToPx">% → px</option>
-            <option value="emToPercent">em → %</option>
-            <option value="percentToEm">% → em</option>
-        </select>
-
-        <div class="tab-content">
-            <!-- Percentage to px -->
-            <div class="panel" id="percentToPx">
-                <label>Percentage (%)</label>
-                <div class="input-wrapper">
-                    <input type="number" id="percentToPxInput" />
-                    <button class="clear-btn" data-target="percentToPxInput" title="Clear">✕</button>
-                </div>
-                <label>Base font size</label>
-                <div class="input-wrapper">
-                    <input type="number" id="percentToPxBase" value="16" />
-                    <button class="clear-btn" data-target="percentToPxBase" title="Clear">✕</button>
-                </div>
-                <p class="result" id="percentToPxResult"></p>
-            </div>
-
-            <!-- px to percentage -->
-            <div class="panel active" id="pxToPercent">
-                <label>Pixel (px)</label>
-                <div class="input-wrapper">
-                    <input type="number" id="pxToPercentInput" />
-                    <button class="clear-btn" data-target="pxToPercentInput" title="Clear">✕</button>
-                </div>
-                <label>Base font size</label>
-                <div class="input-wrapper">
-                    <input type="number" id="pxToPercentBase" value="16" />
-                    <button class="clear-btn" data-target="pxToPercentBase" title="Clear">✕</button>
-                </div>
-                <p class="result" id="pxToPercentResult"></p>
-            </div>
-
-            <!-- Percentage to em -->
-            <div class="panel" id="percentToEm">
-                <label>Percentage (%)</label>
-                <div class="input-wrapper">
-                    <input type="number" id="percentToEmInput" />
-                    <button class="clear-btn" data-target="percentToEmInput" title="Clear">✕</button>
-                </div>
-                <label>Base font size</label>
-                <div class="input-wrapper">
-                    <input type="number" id="percentToEmBase" value="16" />
-                    <button class="clear-btn" data-target="percentToEmBase" title="Clear">✕</button>
-                </div>
-                <p class="result" id="percentToEmResult"></p>
-            </div>
-
-            <!-- em to percentage -->
-            <div class="panel" id="emToPercent">
-                <label>Em (em)</label>
-                <div class="input-wrapper">
-                    <input type="number" id="emToPercentInput" />
-                    <button class="clear-btn" data-target="emToPercentInput" title="Clear">✕</button>
-                </div>
-                <label>Base font size</label>
-                <div class="input-wrapper">
-                    <input type="number" id="emToPercentBase" value="16" />
-                    <button class="clear-btn" data-target="emToPercentBase" title="Clear">✕</button>
-                </div>
-                <p class="result" id="emToPercentResult"></p>
-            </div>
-        </div>
-    </div>
-
-    <script src="static/script.js"></script>
-</body>
-
+    <title>CSS Unit Converter</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
